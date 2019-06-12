@@ -1,7 +1,7 @@
 name: perf-test-inspec
 title: InSpec Profile for AWS performance testing resources
 maintainer: nicolas.fischer@digital.homeoffice.gov.uk
-copyright: UK Home Office
+copyright: Crown copyright (Home Office, Digital, Data and Technology)
 copyright_email: n/a
 license: MIT
 summary: An InSpec compliance profile for HomeOffice performance testing resources

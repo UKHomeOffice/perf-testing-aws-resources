@@ -1,0 +1,33 @@
+pipeline:
+  lint:
+    image: python:3.7-alpine
+    commands:
+      - apk add --no-cache gcc musl-dev make
+      - python3 -m venv venv
+      - source venv/bin/activate
+      - pip install -r requirements.txt
+      - pip install -r requirements-dev.txt
+      - pylint *.py tests/*.py
+      - deactivate
+    when:
+      event:
+        - push
+
+  unit_test:
+    image: python:3.7-alpine
+    commands:
+      - apk add --no-cache make
+      - source venv/bin/activate
+      - python -m pytest --rootdir=tests
+      - deactivate
+    when:
+      event:
+        - push
+
+  inspec_check:
+    image: chef/inspec
+    commands:
+      - check perf-test-inspec
+    when:
+      event:
+        - push

@@ -4,3 +4,4 @@ venv/
 .vscode/
 attributes.yml
 __pycache__/
+perf-test-inspec/vendor/

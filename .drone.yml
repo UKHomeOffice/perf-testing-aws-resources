@@ -25,7 +25,7 @@ pipeline:
         - push
 
   inspec_check:
-    image: chef/inspec
+    image: chef/inspec:current
     commands:
       - inspec check perf-test-inspec
     when:

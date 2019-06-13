@@ -27,7 +27,7 @@ pipeline:
   inspec_check:
     image: chef/inspec:current
     commands:
-      - inspec check perf-test-inspec
+      - inspec check --chef-license=accept-silent perf-test-inspec
     when:
       event:
         - push

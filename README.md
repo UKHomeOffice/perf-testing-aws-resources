@@ -17,7 +17,7 @@ Managed policies are also created:
 * `${PREFIX}${ENVIRONMENT}-performance-test-bucket-writeonly` allowing to write to the S3 bucket and intended to be used by the
 performance tool
 * `${PREFIX}${ENVIRONMENT}-performance-tests-bucket-readonly` allowing a user to read the reports
-* `${PREFIX}${ENVIRONMENT}-performance-tests-bucket-admin` allowing an admin to read and delete S3 objets (but not write)
+* `${PREFIX}${ENVIRONMENT}-performance-tests-bucket-admin` allowing an admin to read and delete S3 objects (but not write)
 
 ## Creating the resources
 
@@ -35,7 +35,7 @@ aws cloudformation create-change-set --stack-name "${PREFIX}${ENVIRONMENT}-perf-
 
 ## Testing
 
-Chef Inspec is used to test the resources.
+[Chef Inspec](https://www.inspec.io/) is used to test the resources.
 
 Assuming credentials are available as `AWS_*` environment variables, the following will test the AWS resources:
 
